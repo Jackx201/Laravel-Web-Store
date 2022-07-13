@@ -1,4 +1,4 @@
-<header class="bg-gray-700">
+<header class="bg-gray-700 sticky top-0">
     {{-- The best athlete wants his opponent at his best. --}}
     
         <div class="container flex items-center h-16">
@@ -18,6 +18,7 @@
 
         <!-- Settings Dropdown -->
         <div class="ml-3 relative">
+        @auth
             <x-jet-dropdown align="right" width="48">
                 <x-slot name="trigger">
                     @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
@@ -66,6 +67,32 @@
                     </form>
                 </x-slot>
             </x-jet-dropdown>
+            @else
+            <x-jet-dropdown allign="right" width="48">
+                <x-slot name="trigger">
+                    <i class = "fa fa-user-circle text-white text-4xl mx-1"></i>
+                </x-slot>
+
+                <x-slot name="content">
+                    <x-jet-dropdown-link href="{{route('login')}}">
+                        {{__('Login')}}
+                    </x-jet-dropdown-link>
+                    
+                    <x-jet-dropdown-link href="{{route('register')}}">
+                        {{__('Register')}} 
+                    </x-jet-dropdown-link>
+                </x-slot>
+
+
+            </x-jet-dropdown>
+        @endauth
         </div>
+            <div class="px-4">
+                @livewire('dropdown-cart')
+            </div>
+
+            <nav class="bg-gray-700 bg-opacity-25 w-full absolute" id="navigation-menu">
+
+            </nav>
         </div>
 </header>
