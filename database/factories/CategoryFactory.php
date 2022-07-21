@@ -19,7 +19,7 @@ class CategoryFactory extends Factory
         $fakerFilesName = $this->faker->image(storage_path("app/public/categories"), 640, 480);
         return [
             'image' => 'categories/'.$this->faker->imageUrl(640, 480), 
-            'image' => "app/public/categories".basename($fakerFilesName)
+            'image' => "categories/".basename($fakerFilesName)
         ];
     }
 }

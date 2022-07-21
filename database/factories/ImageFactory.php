@@ -19,7 +19,7 @@ class ImageFactory extends Factory
         $fakerFilesName = $this->faker->image(storage_path("app/public/products"), 640, 480);
         return [
             'url' => 'products/'.$this->faker->imageUrl(640, 480), 
-            'url' => "app/public/products".basename($fakerFilesName)
+            'url' => "products/".basename($fakerFilesName)
         ];
     }
 }
