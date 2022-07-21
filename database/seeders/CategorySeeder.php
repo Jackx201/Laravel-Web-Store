@@ -22,23 +22,23 @@ class CategorySeeder extends Seeder
 
            [ 'name' => 'Cell phones and tables',
             'slug' => Str::slug('Cell phones and tables'),
-            'icon' =>'<i class="fa-solid fa-mobile-screen-button"></i>'
+            'icon' =>'<i class="fa fa-mobile"></i>'
             ],
             [ 'name' => 'TV, audio and video',
             'slug' => Str::slug('TV, audio and video'),
-            'icon' =>'<i class="fa-solid fa-tv"></i>'
+            'icon' =>'<i class="fa fa-tv"></i>'
             ],
             [ 'name' => 'Console and video games',
             'slug' => Str::slug('Console and video games'),
-            'icon' => '<i class="fa-regular fa-gamepad-modern"></i>'
+            'icon' => '<i class="fa fa-gamepad"></i>'
             ],
             [ 'name' => 'Computing',
             'slug' => Str::slug('Computing'),
-            'icon' =>'<i class="fa-regular fa-laptop"></i>'
+            'icon' =>'<i class="fa fa-laptop"></i>'
             ],
             [ 'name' => 'Fashion',
             'slug' => Str::slug('Fashion'),
-            'icon' =>'<i class="fa-regular fa-shirt"></i>'
+            'icon' =>'<i class="fa fa-tshirt"></i>'
             ],
     
     ];
