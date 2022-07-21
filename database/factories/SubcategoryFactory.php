@@ -15,7 +15,7 @@ class SubcategoryFactory extends Factory
         $fakerFilesName = $this->faker->image(storage_path("app/public/subcategories"), 640, 480);
         return [
             'image' => 'subcategories/'.$this->faker->imageUrl(640, 480), 
-            'image' => "app/public/subcategories".basename($fakerFilesName)
+            'image' => "subcategories/".basename($fakerFilesName)
         ];
     }
 }
