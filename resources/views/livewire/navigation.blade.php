@@ -1,11 +1,21 @@
-<header class="bg-gray-700 sticky top-0">
+<style>
+    #navigation-menu{
+        height: calc(100vh - 4rem);
+    }
+
+    .navigation-link:hover .navigation-submenu {
+        display: block !important; 
+    }
+</style>
+
+<header class="bg-gray-700 sticky top-0" x-data="dropdown()">
     {{-- The best athlete wants his opponent at his best. --}}
     
         <div class="container flex items-center h-16">
 
-            <a class=" flex items-center justify-center px-4 flex-col h-16 flex-col bg-white opacity-75" href="#">
+            <a x-on:click = "show()" class=" flex items-center justify-center px-4 flex-col h-16 flex-col bg-white opacity-75" href="#">
                 <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                    <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     {{-- <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /> --}}
                 </svg>
                 <span>Container</span>
@@ -90,9 +100,46 @@
             <div class="px-4">
                 @livewire('dropdown-cart')
             </div>
-
-            <nav class="bg-gray-700 bg-opacity-25 w-full absolute" id="navigation-menu">
-
-            </nav>
         </div>
+        <nav x-show="open" :class="{'block':open, 'hidden':!open}" class="bg-gray-700 bg-opacity-25 w-full absolute hidden" id="navigation-menu">
+
+            <div x-on:click.away = "close()" class="container h-full">
+                <div class="grid grid-cols-4 h-full relative">
+                    <ul class="bg-white">
+                        @foreach ($categories as $category)
+                            <li class="navigation-link text-gray-500 hover:bg-orange-500 hover:text-white">
+                                <a href="" class="py-2 px-4 text-sm flex items-center">
+                                    <span class="flex justify-center w-9"> {!!$category->icon!!} </span>
+                                    {{ $category->name}}
+                                </a>
+                                <div class="navigation-submenu bg-gray-100 absolute w-3/4 top-0 right-0 h-full hidden">                                    <x-navigation-subcategories :category="$category"/>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+
+                    <div class="col-span-3 bg-gray-100">
+                        <x-navigation-subcategories :category="$category->first()"/>
+                    </div>
+                </div>
+            </div>
+        </nav>
 </header>
+
+<script>
+    function dropdown(){
+        return{
+            open:false,
+            show(){
+                if(this.open){
+                    this.open = false
+                    document.getElementsByTagName('html')[0].style.overflow = "auto"
+                } else {
+                    this.open = true
+                }
+            }, close(){
+            this.open = false
+            }
+        } 
+    }
+</script>
