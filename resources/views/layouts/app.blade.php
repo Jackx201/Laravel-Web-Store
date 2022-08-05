@@ -13,7 +13,7 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/fa/css/all.min.css') }}">
-
+        <script src="{{ asset('vendor/js/menu.js') }}"></script>
         @livewireStyles
 
         <!-- Scripts -->
