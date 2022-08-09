@@ -13,11 +13,13 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/fa/css/all.min.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.7/glider.min.css">
         <script src="{{ asset('vendor/js/menu.js') }}"></script>
         @livewireStyles
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.7/glider.min.js"></script>
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
@@ -45,5 +47,6 @@
         @stack('modals')
 
         @livewireScripts
+        @stack('script')
     </body>
 </html>

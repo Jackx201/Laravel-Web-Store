@@ -32,8 +32,8 @@ class Product extends Model
     }
 
     //polimorfica
-    public function image(){
-        return $this->morphToMany(Image::class, "imageable");
+    public function images(){
+        return $this->morphMany(Image::class, "imageable");
     }
 
 }

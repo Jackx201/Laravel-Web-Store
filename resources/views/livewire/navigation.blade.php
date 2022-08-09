@@ -1,4 +1,4 @@
-<header class="bg-gray-700 sticky top-0" x-data="dropdown()">
+<header class="bg-gray-700 sticky z-50 top-0" x-data="dropdown()">
     {{-- The best athlete wants his opponent at his best. --}}
     
         <div class="container flex items-center h-16 justify-between md:justify-start">
