@@ -44,12 +44,19 @@
 
             <div class="ml-4">
               <p class="text-lg format-semibold text-green-600">Shipments available to all México</p>
-              <p>Recíbelo el {{Date::now()->addDay(3)->locale('es')->format('l j F')}}</p>
+              <p>Receive it on {{Date::now()->addDay(3)->locale('us')->format('l j F')}}</p>
             </div>
           </div>
         </div>
         {{-- Ends:Card --}}
 
+        @if ($product->subcategory->size)
+            @livewire('add-cart-item-size', ['product' => $product])
+        @elseif($product->subcategory-> color)
+            @livewire('add-cart-item-color', ['product' => $product])
+        @else
+            @livewire('add-cart-item', ['product' => $product])
+        @endif
 
       </div>
       {{-- Ends: Product Details--}}

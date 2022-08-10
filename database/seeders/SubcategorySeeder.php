@@ -70,32 +70,32 @@ class SubcategorySeeder extends Seeder
                 'category_id' => 3,
                 'name' => 'Xbox',
                 'slug' => Str::slug('Xbox'),
-                'color' => true,
-                'size' => true
+                'color' => false,
+                'size' => false
             ],
 
             [
                 'category_id' => 3,
                 'name' => 'Play Station',
                 'slug' => Str::slug('Play Station'),
-                'color' => true,
-                'size' => true
+                'color' => false,
+                'size' => false
             ],
 
             [
                 'category_id' => 3,
                 'name' => 'PC Games',
                 'slug' => Str::slug('PC Games'),
-                'color' => true,
-                'size' => true
+                'color' => false,
+                'size' => false
             ],
 
             [
                 'category_id' => 3,
                 'name' => 'Nintendo',
                 'slug' => Str::slug('Nintendo'),
-                'color' => true,
-                'size' => true
+                'color' => false,
+                'size' => false
             ],
 
             [
