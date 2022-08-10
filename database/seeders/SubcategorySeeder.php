@@ -23,7 +23,7 @@ class SubcategorySeeder extends Seeder
                 'name' => 'Cell phones and smartphones',
                 'slug' => Str::slug('Cell phones and smartphones'),
                 'color' => true,
-                'size' => true
+                'size' => false
             ],
 
             [
@@ -31,7 +31,7 @@ class SubcategorySeeder extends Seeder
                 'name' => 'Cell phone accesories',
                 'slug' => Str::slug('Cell phone accesories'),
                 'color' => true,
-                'size' => true
+                'size' => false
             ],
 
             [
@@ -39,7 +39,7 @@ class SubcategorySeeder extends Seeder
                 'name' => 'Smartwatches',
                 'slug' => Str::slug('Smartwatches'),
                 'color' => true,
-                'size' => true
+                'size' => false
             ],
 
             [
