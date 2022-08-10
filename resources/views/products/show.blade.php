@@ -27,7 +27,8 @@
         
         <div class="flex">
           <p class="text-gray-700">Brand: <a class="underline capitalize hover:text-orange-500" href=""> {{$product->brand->name}} </a> </p>
-          <p class="text-gray-700 ml-6">5 <i class="fa fa-star text-sm text-yellow-400"></i></p>
+          <p class="text-gray-700 mx-6">5 <i class="fa fa-star text-sm text-yellow-400"></i></p>
+          <p class="text-orange-500 underline hover:text-orange-700">Reviews 19</p>
         </div>
 
         <p class="text-2xl font-semibold text-gray-700">
@@ -43,7 +44,7 @@
 
             <div class="ml-4">
               <p class="text-lg format-semibold text-green-600">Shipments available to all México</p>
-              <p>Receive it on {{now()->addDay(3)->format('l j F')}}</p>
+              <p>Recíbelo el {{Date::now()->addDay(3)->locale('es')->format('l j F')}}</p>
             </div>
           </div>
         </div>
