@@ -19,7 +19,7 @@ class Product extends Model
     }
 
     //one to many inverse
-    public function brands(){
+    public function brand(){
         return $this->belongsTo(Brand::class);
     }
 
